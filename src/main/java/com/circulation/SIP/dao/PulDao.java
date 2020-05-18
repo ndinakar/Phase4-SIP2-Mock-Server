@@ -16,7 +16,7 @@ public class PulDao {
         if (connection == null) {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://192.168.55.192:3306/pul", "recap", "recap");
+                    "jdbc:mysql://172.17.0.2:3306/pul", "recap", "recap");
         }
         return connection;
     }
