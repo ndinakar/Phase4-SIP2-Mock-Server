@@ -14,7 +14,7 @@ public class PulDao {
 
     public static Connection getConnection() throws Exception {
         if (connection == null) {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
                     "jdbc:mysql://172.17.0.2:3306/pul?autoReconnect=true&useSSL=false&serverTimezone=America/New_York", "recap", "recap");
         }
@@ -28,6 +28,7 @@ public class PulDao {
             preparedStatement.setString(2, password);
             return preparedStatement.executeQuery().next();
         } catch (Exception e) {
+        	System.out.print(e+"Exception");
             return false;
         }
     }
